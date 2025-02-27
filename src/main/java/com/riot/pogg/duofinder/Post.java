@@ -1,12 +1,11 @@
-package com.riot.pogg.model;
+package com.riot.pogg.duofinder;
 
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
 public class Post {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String title;
@@ -20,7 +19,7 @@ public class Post {
     @JoinColumn(name = "position_id")
     private Position position;
 
-    private LocalDateTime createdAt = LocalDateTime.now();
+    private LocalDateTime createdAt = LocalDateTime.now(); //만료된 코드 삭제 부분
 
 }
 
