@@ -13,7 +13,7 @@ public class PostService {
     }
 
     public List<Post> filterPostsByQueueAndPosition(String queueType, String position) {
-        return postRepository.findByQueueTypeAndPosition(queueType, position);
+        return postRepository.findByCategoryName();
     }
 }
 

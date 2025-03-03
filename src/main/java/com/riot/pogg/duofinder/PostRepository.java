@@ -7,7 +7,7 @@ import java.util.List;
 
 @Repository
 public interface PostRepository extends JpaRepository<Post, Long> {
-    // 큐 타입과 포지션으로 게시글 필터링 작업
-    List<Post> findByQueueTypeAndPosition(String queueType, String position);
+    List<Post> findByCategoryName(String categoryName);
+    List<Post> findByPositionName(String positionName);
 }
 
