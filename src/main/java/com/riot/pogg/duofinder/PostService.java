@@ -12,8 +12,17 @@ public class PostService {
         this.postRepository = postRepository;
     }
 
-    public List<Post> filterPostsByQueueAndPosition(String queueType, String position) {
-        return postRepository.findByCategoryName();
+    public List<Post> getPostsByCategory(String categoryName) {
+        return postRepository.findByCategoryName(categoryName);
+    }
+
+    public List<Post> getPostsByPosition(String positionName) {
+        return postRepository.findByPositionName(positionName);
+    }
+
+    public Post createPost(Post post) {
+        return postRepository.save(post);
     }
 }
+
 
