@@ -1,5 +1,6 @@
-package com.riot.pogg.duofinder;
+package com.riot.pogg.duofinder.category;
 
+import com.riot.pogg.duofinder.post.Post;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
