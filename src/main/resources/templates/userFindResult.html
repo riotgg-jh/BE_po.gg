@@ -11,5 +11,45 @@
         <h3>puuid: <span th:text="${puuid}"></span></h3>
         <p th:if="${error}" th:text="${error}"></p>
     </div>
+
+<!--    <div>-->
+<!--        <h3>솔로랭크 티어: <span th:text="${solotier}"></span> <span th:text="${solorank}"></span> <span th:text="${solopoints}"></span> 점 <span th:text="${solowins}"></span> 승-->
+<!--            <span th:text="${sololosses}"></span> 패</h3>-->
+<!--        <p th:if="${error}" th:text="${error}"></p>-->
+<!--    </div>-->
+
+    <thead>
+    <tr>
+        <th>Solo Tier</th>
+        <th>Rank</th>
+        <th>Points</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="entry : ${soloEntries}">
+        <td th:text="${entry.tier}"></td>
+        <td th:text="${entry.rank}"></td>
+        <td th:text="${entry.leaguePoints}"></td>
+    </tr>
+    </tbody>
+
+    <thead>
+    <tr>
+        <th>Flex Tier</th>
+        <th>Rank</th>
+        <th>Points</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="entry : ${flexEntries}">
+        <td th:text="${entry.tier}"></td>
+        <td th:text="${entry.rank}"></td>
+        <td th:text="${entry.leaguePoints}"></td>
+    </tr>
+    </tbody>
+
+    <th:block th:each="matchId : ${matchIds}">
+        <li th:text="${matchId}"></li>
+    </th:block>
 </body>
 </html>
