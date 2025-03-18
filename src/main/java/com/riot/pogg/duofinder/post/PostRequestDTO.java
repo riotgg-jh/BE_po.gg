@@ -7,9 +7,6 @@ import lombok.Setter;
 @Setter
 
 public class PostRequestDTO {
-    @NotBlank (message = "제목은 필수 입력 항목입니다.")
-    @Size(max = 30, message = "제목은 최대 30자까지 입력 가능합니다.")
-    private String title; // 제목
 
     @NotBlank(message = "내용은 필수 입력 항목입니다.")
     @Size(max = 80, message = "내용은 최대 80자까지 입력 가능합니다.")

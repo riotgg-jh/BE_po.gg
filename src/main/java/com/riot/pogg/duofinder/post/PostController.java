@@ -6,7 +6,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/posts")
+@RequestMapping("/api/posts")
 public class PostController {
 
     private final PostService postService;
@@ -18,6 +18,6 @@ public class PostController {
     @PostMapping("/create")
     public ResponseEntity<String> createPost(@Validated @RequestBody PostRequestDTO postRequestDTO) {
         postService.createPost(postRequestDTO);
-        return new ResponseEntity<>("게시글이 등록이 완료되었습니다.", HttpStatus.CREATED);
+        return new ResponseEntity<>("게시글이 등록되었습니다.", HttpStatus.CREATED);
     }
 }
