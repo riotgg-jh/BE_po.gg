@@ -17,9 +17,6 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, length = 30)
-    private String title; // 제목 (최대 30자)
-
     @Column(nullable = false, length = 80)
     private String content; // 내용 (최대 80자)
 
@@ -37,28 +34,12 @@ public class Post {
     @Column(nullable = false, updatable = false)
     private LocalDateTime createdAt; // 생성 시간
 
-    // JPA 기본 생성자
-    public Post() {}
+    @Column(nullable = false)
+    private LocalDateTime expirationTime; // 만료 시간
 
-    // 게시글 생성 시간 설정 (JPA에서 자동 호출)
     @PrePersist
     protected void onCreate() {
         this.createdAt = LocalDateTime.now();
+        this.expirationTime = createdAt.plusHours(24); // 기본 만료 시간 : 생성 후 24시간
     }
-    // 게시글을 승인(PUBLISHED) 상태로 변경
-    public void approve() {
-        if (this.status != PostStatus.DRAFT) {
-            throw new IllegalStateException("게시물 승인");
-        }
-        this.status = PostStatus.PUBLISHED;
-    }
-
-    // 게시글을 거부(REJECTED) 상태로 변경
-    public void reject() {
-        if (this.status != PostStatus.DRAFT) {
-            throw new IllegalStateException("게시물 거부");
-        }
-        this.status = PostStatus.REJECTED;
-    }
-
 }
