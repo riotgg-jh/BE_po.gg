@@ -1,24 +1,41 @@
 package com.riot.pogg.duofinder.category;
 
 import com.riot.pogg.duofinder.post.Post;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-
+import jakarta.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 public class Category {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name; // 큐 타입(솔로 랭크, 자유 랭크, 일반 게임)
+    @Enumerated(EnumType.STRING) // DB에 문자열 형태로 저장
+    private CategoryType categoryType;
 
     @OneToMany(mappedBy = "category")
     private List<Post> posts = new ArrayList<>();
 
+    public Long getId() {
+        return id;
+    }
+
+    public CategoryType getCategoryType() {
+        return categoryType;
+    }
+
+    public void setCategoryType(CategoryType categoryType) {
+        this.categoryType = categoryType;
+    }
+
+    public List<Post> getPosts() {
+        return posts;
+    }
+
+    public void setPosts(List<Post> posts) {
+        this.posts = posts;
+    }
 }
 
