@@ -1,4 +1,4 @@
-package com.riot.pogg.duofinder;
+package com.riot.pogg.duofinder.post;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
