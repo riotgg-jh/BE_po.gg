@@ -1,4 +1,4 @@
-package com.riot.pogg.userfind;
+package com.riot.pogg.usersearch.userfind;
 
 import lombok.Getter;
 import lombok.Setter;
