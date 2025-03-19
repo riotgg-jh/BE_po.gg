@@ -1,4 +1,4 @@
-package com.riot.pogg.matchfind;
+package com.riot.pogg.usersearch.matchfind;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -21,7 +21,13 @@ public class ParticipantDto {
     int item5;
     int item6;
     int participantId;
+    int profileIcon;
+    int summoner1Id;
+    int summoner2Id;
     PerksDto perks;
     String puuid;
+    String riotIdGameName;
+    String riotIdTagline;
     boolean win;
+    ChallengesDto challenges;
 }

@@ -1,5 +1,6 @@
-package com.riot.pogg.userfind;
+package com.riot.pogg.usersearch.userfind;
 
+import com.riot.pogg.usersearch.matchfind.MatchDTO;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpHeaders;
@@ -8,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -90,6 +92,33 @@ public class userFindService {
             return response.getBody();
         } catch (Exception e) {
             throw new RuntimeException("리그 정보 가져오기 실패: " + e.getMessage());
+        }
+    }
+
+    public SummonerDTO getSummonerByPuuId(String puuid) {
+        // Riot API URL
+        String url = String.format(
+                "https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-puuid/%s",
+                puuid
+        );
+
+        // RestTemplate 생성
+        RestTemplate restTemplate = new RestTemplate();
+
+        // 헤더 설정
+        HttpHeaders headers = new HttpHeaders();
+        headers.set("X-Riot-Token", apiKey); // application.properties에서 가져온 API 키 사용
+
+        try {
+            ResponseEntity<SummonerDTO> response = restTemplate.exchange(
+                    url,
+                    HttpMethod.GET,
+                    new org.springframework.http.HttpEntity<>(headers),
+                    SummonerDTO.class
+            );
+            return response.getBody();
+        } catch (Exception e) {
+            throw new RuntimeException("Riot API 호출 실패 :" + e.getMessage());
         }
     }
 }
