@@ -18,24 +18,24 @@ public class Post {
     private Long id;
 
     @Column(nullable = false, length = 80)
-    private String content; // 내용 (최대 80자)
+    private String content;
 
     @Enumerated(EnumType.STRING)
     private PostStatus status; // 게시글 상태 (DRAFT, PUBLISHED, REJECTED)
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "category_id", nullable = false)
-    private Category category; // 카테고리 연관 관계
+    private Category category;
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "position_id", nullable = false)
-    private Position position; // 포지션 연관 관계
+    private Position position;
 
     @Column(nullable = false, updatable = false)
-    private LocalDateTime createdAt; // 생성 시간
+    private LocalDateTime createdAt;
 
     @Column(nullable = false)
-    private LocalDateTime expirationTime; // 만료 시간
+    private LocalDateTime expirationTime;
 
     @PrePersist
     protected void onCreate() {

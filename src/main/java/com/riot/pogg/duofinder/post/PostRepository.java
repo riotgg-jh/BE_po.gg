@@ -9,5 +9,5 @@ import java.util.List;
 @Repository
 public interface PostRepository extends JpaRepository<Post, Long> {
 
-    List<Post> findByExpirationTimeBefore(LocalDateTime now); // 만료된 게시글 조회
+    List<Post> findByExpirationTimeBefore(LocalDateTime now);
 }
