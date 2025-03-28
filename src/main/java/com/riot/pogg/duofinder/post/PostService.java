@@ -4,6 +4,9 @@ import com.riot.pogg.duofinder.category.Category;
 import com.riot.pogg.duofinder.position.Position;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -20,9 +23,8 @@ public class PostService {
 
     @Transactional
     public void createPost(PostRequestDTO postRequestDTO) {
-        // 소환사 이름 검증 (Riot API)
-        if (!riotApiService.isSummonerNameValid(postRequestDTO.getContent())) {
-            throw new IllegalArgumentException("입력한 소환사 이름이 존재하지 않습니다.");
+        if (!riotApiService.isSummonerNameValid(postRequestDTO.getGameName())) {
+            throw new IllegalArgumentException("입력한 소환사 이름 또는 태그가 존재하지 않습니다.");
         }
 
         Category category = new Category();
@@ -40,13 +42,17 @@ public class PostService {
         postRepository.save(post);
     }
 
+    private static final Logger logger = LoggerFactory.getLogger(PostService.class);
+
     @Transactional
     public void deleteExpiredPosts() {
         LocalDateTime now = LocalDateTime.now();
         List<Post> expiredPosts = postRepository.findByExpirationTimeBefore(now);
+
         if (!expiredPosts.isEmpty()) {
-            postRepository.deleteAll(expiredPosts);
-            System.out.println("만료된 게시글 삭제 완료: " + expiredPosts.size() + "개");
+            postRepository.deleteAll(expiredPosts); // 만료된 게시글 삭제
         }
     }
+
 }
+

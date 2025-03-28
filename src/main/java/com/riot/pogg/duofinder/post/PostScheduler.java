@@ -12,10 +12,9 @@ public class PostScheduler {
         this.postService = postService;
     }
 
-    // 매일 자정에 실행 (CRON 표현식: 초 분 시 일 월 요일)
-    @Scheduled(cron = "0 0 0 * * *")
+    @Scheduled(cron = "0 0 0 * * *") // 자정 실행
     public void removeExpiredPosts() {
         postService.deleteExpiredPosts();
-        System.out.println("스케줄링 실행: 만료된 게시글 삭제 작업 완료");
+        System.out.println("스케줄링 실행: 만료된 게시글 삭제 완료");
     }
 }

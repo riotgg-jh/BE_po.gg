@@ -21,7 +21,7 @@ public class Post {
     private String content;
 
     @Enumerated(EnumType.STRING)
-    private PostStatus status; // 게시글 상태 (DRAFT, PUBLISHED, REJECTED)
+    private PostStatus status;
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "category_id", nullable = false)
@@ -40,6 +40,6 @@ public class Post {
     @PrePersist
     protected void onCreate() {
         this.createdAt = LocalDateTime.now();
-        this.expirationTime = createdAt.plusHours(24); // 기본 만료 시간 : 생성 후 24시간
+        this.expirationTime = createdAt.plusHours(24);
     }
 }
