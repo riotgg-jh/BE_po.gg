@@ -13,6 +13,6 @@ public class Position {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Enumerated(EnumType.STRING) // DB에 문자열로 저장
+    @Enumerated(EnumType.STRING)
     private PositionType positionType;
 }
