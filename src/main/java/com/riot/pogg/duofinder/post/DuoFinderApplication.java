@@ -2,10 +2,8 @@ package com.riot.pogg.duofinder.post;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.scheduling.annotation.EnableScheduling;
 
-@SpringBootApplication
-@EnableScheduling // 스케줄링 활성화
+@SpringBootApplication(scanBasePackages = "com.riot.pogg.duofinder")
 public class DuoFinderApplication {
 
     public static void main(String[] args) {
