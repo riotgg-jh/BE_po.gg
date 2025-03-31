@@ -167,7 +167,7 @@ https://youtu.be/Az15Lqwllvo
 
 ### 💡 회고
 - 강보성
-
+https://crystal-hourglass-e0d.notion.site/PO-GG-1c7dc55c75be8076b278efcd99a22b95
 - 이혜린
 
 - 김정인
