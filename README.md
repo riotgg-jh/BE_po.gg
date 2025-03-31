@@ -140,6 +140,12 @@
 https://youtu.be/Az15Lqwllvo
 
 ## 💡 기술 스택
+### FE
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+<br>
+
+- React
+
 ### BE
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white) 
 ![Spring Boot](https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white)
@@ -150,9 +156,3 @@ https://youtu.be/Az15Lqwllvo
 - Spring Boot 3.4.2 / Java 21
 - Spring Data JPA
 - MySQL 9
-
-### FE
-![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
-<br>
-
-- React
