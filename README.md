@@ -139,7 +139,7 @@
 ### 💡 시연 영상
 https://youtu.be/Az15Lqwllvo
 
-## 💡 기술 스택
+### 💡 기술 스택
 ### FE
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 <br>
@@ -156,3 +156,11 @@ https://youtu.be/Az15Lqwllvo
 - Spring Boot 3.4.2 / Java 21
 - Spring Data JPA
 - MySQL 9
+
+### 💡 회고
+- 강보성
+
+- 이혜린
+
+- 김정인
+https://third-lathe-8d9.notion.site/1a77105b8bbc801ead19c9ecd7bf58a5
