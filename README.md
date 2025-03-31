@@ -136,10 +136,10 @@
 <br>
 
 
-### 시연 영상
+### 💡 시연 영상
 https://youtu.be/Az15Lqwllvo
 
-## 기술 스택
+## 💡 기술 스택
 ### BE
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white) 
 ![Spring Boot](https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white)
