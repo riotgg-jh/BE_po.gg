@@ -148,11 +148,11 @@ https://youtu.be/Az15Lqwllvo
 <img src="https://img.shields.io/badge/node.js-339933?style=for-the-badge&logo=Node.js&logoColor=white">
 <br>
 
-- React
+- React 18.2.0
 - CSS
 - javascript
 - Bootstrap
-- Node.js
+- Node.js 20.16.0
 
 ### BE
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white) 
