@@ -136,8 +136,6 @@
 <br>
 
 
-### 💡 시연 영상
-https://youtu.be/Az15Lqwllvo
 
 ### 💡 기술 스택
 ### FE
