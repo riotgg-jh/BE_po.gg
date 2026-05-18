@@ -169,4 +169,4 @@ https://crystal-hourglass-e0d.notion.site/PO-GG-1c7dc55c75be8076b278efcd99a22b95
 - 이혜린
 
 - 김정인
-https://third-lathe-8d9.notion.site/1a77105b8bbc801ead19c9ecd7bf58a5
+https://catnip-memory-4f5.notion.site/PO-GG-364c4f59f2f980c1a569da5369d1bd6c
